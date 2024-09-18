@@ -19,7 +19,7 @@
         }
         .catalog {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
             padding: 20px;
         }
@@ -32,7 +32,7 @@
         }
         .product img {
             max-width: 100%;
-            height: 250px; /* Одинаковая высота для всех изображений */
+            height: 250px; /* Consistent height for all images */
             object-fit: contain;
             border-radius: 8px;
         }
@@ -56,7 +56,7 @@
             background-color: #218838;
         }
         .modal {
-            display: none; /* Скрыто по умолчанию */
+            display: none; /* Hidden by default */
             position: fixed;
             z-index: 1000;
             left: 0;
@@ -120,65 +120,65 @@
 <section class="catalog">
     <!-- Rank 30 products -->
     <div class="product">
-        <img src="rank30.jpg" alt="Rank 30">
+        <img src="images/rank30.jpg" alt="Rank 30">
         <h2>Rank 30: From 750 - 9.99€</h2>
         <button onclick="openModal('https://paypal.me/amsacc/9.99')">Buy with PayPal</button>
     </div>
     <div class="product">
-        <img src="rank30.jpg" alt="Rank 30">
+        <img src="images/rank30.jpg" alt="Rank 30">
         <h2>Rank 30: From 800 - 8.99€</h2>
         <button onclick="openModal('https://paypal.me/amsacc/8.99')">Buy with PayPal</button>
     </div>
     <div class="product">
-        <img src="rank30.jpg" alt="Rank 30">
+        <img src="images/rank30.jpg" alt="Rank 30">
         <h2>Rank 30: From 850 - 7.99€</h2>
         <button onclick="openModal('https://paypal.me/amsacc/7.99')">Buy with PayPal</button>
     </div>
     <div class="product">
-        <img src="rank30.jpg" alt="Rank 30">
+        <img src="images/rank30.jpg" alt="Rank 30">
         <h2>Rank 30: From 900 - 6.99€</h2>
         <button onclick="openModal('https://paypal.me/amsacc/6.99')">Buy with PayPal</button>
     </div>
     <div class="product">
-        <img src="rank30.jpg" alt="Rank 30">
+        <img src="images/rank30.jpg" alt="Rank 30">
         <h2>Rank 30: From 950 - 5.49€</h2>
         <button onclick="openModal('https://paypal.me/amsacc/5.49')">Buy with PayPal</button>
     </div>
 
     <!-- Rank 35 products -->
     <div class="product">
-        <img src="rank35.jpeg" alt="Rank 35">
+        <img src="images/rank35.jpeg" alt="Rank 35">
         <h2>Rank 35: From 750 - 34.99€</h2>
         <button onclick="openModal('https://paypal.me/amsacc/34.99')">Buy with PayPal</button>
     </div>
     <div class="product">
-        <img src="rank35.jpeg" alt="Rank 35">
+        <img src="images/rank35.jpeg" alt="Rank 35">
         <h2>Rank 35: From 1000 - 24.99€</h2>
         <button onclick="openModal('https://paypal.me/amsacc/24.99')">Buy with PayPal</button>
     </div>
     <div class="product">
-        <img src="rank35.jpeg" alt="Rank 35">
+        <img src="images/rank35.jpeg" alt="Rank 35">
         <h2>Rank 35: From 1050 - 22.99€</h2>
         <button onclick="openModal('https://paypal.me/amsacc/22.99')">Buy with PayPal</button>
     </div>
     <div class="product">
-        <img src="rank35.jpeg" alt="Rank 35">
+        <img src="images/rank35.jpeg" alt="Rank 35">
         <h2>Rank 35: From 1100 - 19.99€</h2>
         <button onclick="openModal('https://paypal.me/amsacc/19.99')">Buy with PayPal</button>
     </div>
     <div class="product">
-        <img src="rank35.jpeg" alt="Rank 35">
+        <img src="images/rank35.jpeg" alt="Rank 35">
         <h2>Rank 35: From 1150 - 16.99€</h2>
         <button onclick="openModal('https://paypal.me/amsacc/16.99')">Buy with PayPal</button>
     </div>
     <div class="product">
-        <img src="rank35.jpeg" alt="Rank 35">
+        <img src="images/rank35.jpeg" alt="Rank 35">
         <h2>Rank 35: From 1200 - 12.99€</h2>
         <button onclick="openModal('https://paypal.me/amsacc/12.99')">Buy with PayPal</button>
     </div>
 </section>
 
-<!-- Modal окно с правилами -->
+<!-- Modal for Purchase Rules -->
 <div id="rulesModal" class="modal">
     <div class="modal-content">
         <h2>Purchase Rules</h2>
@@ -195,29 +195,29 @@
     </div>
 </div>
 
-<!-- Модальное окно для уведомления о контакте -->
+<!-- Modal for Contact Notification -->
 <div id="contactModal" class="modal">
     <div class="modal-content">
         <h2>Thank you for your purchase!</h2>
         <p>Please contact me via one of the following platforms to finalize the order:</p>
         <div class="socials">
             <a href="https://discordapp.com/users/kostantincarry" target="_blank">
-                <img src="discord.png" alt="Discord">
+                <img src="images/discord.png" alt="Discord">
                 <span>Discord</span>
             </a>
             <a href="https://t.me/peipya" target="_blank">
-                <img src="telegram.png" alt="Telegram">
+                <img src="images/telegram.png" alt="Telegram">
                 <span>Telegram</span>
             </a>
             <a href="https://wa.me/79265881185" target="_blank">
-                <img src="whatsapp.png" alt="WhatsApp">
+                <img src="images/whatsapp.png" alt="WhatsApp">
                 <span>WhatsApp</span>
             </a>
         </div>
     </div>
 </div>
 
-<!-- Модальное окно, если не оплатил -->
+<!-- Modal for Payment Not Completed -->
 <div id="noPaymentModal" class="modal">
     <div class="modal-content">
         <h2>Payment Not Completed</h2>
@@ -233,28 +233,39 @@
 <script>
     let selectedPaymentLink = '';
 
-    // Функция для открытия модального окна с правилами
+    // Function to open the Purchase Rules modal
     function openModal(paymentLink) {
-        selectedPaymentLink = paymentLink; // Запоминаем ссылку для оплаты
+        selectedPaymentLink = paymentLink; // Store the payment link
         document.getElementById('rulesModal').style.display = 'flex';
     }
 
-    // Обработчик для кнопки "Agree and Continue"
+    // Handler for the "Agree and Continue" button
     document.getElementById('agreeButton').onclick = function() {
-        window.open(selectedPaymentLink, '_blank'); // Открываем PayPal в новой вкладке
-        document.getElementById('rulesModal').style.display = 'none'; // Закрываем модальное окно
-        document.getElementById('contactModal').style.display = 'flex'; // Открываем уведомление с контактами
+        window.open(selectedPaymentLink, '_blank'); // Open PayPal in a new tab
+        document.getElementById('rulesModal').style.display = 'none'; // Close the rules modal
+        document.getElementById('contactModal').style.display = 'flex'; // Open the contact notification modal
     };
 
-    // Обработчик для кнопки "Disagree"
+    // Handler for the "Disagree" button
     document.getElementById('disagreeButton').onclick = function() {
-        document.getElementById('rulesModal').style.display = 'none'; // Закрываем модальное окно
-        document.getElementById('noPaymentModal').style.display = 'flex'; // Открываем окно, если не оплатил
+        document.getElementById('rulesModal').style.display = 'none'; // Close the rules modal
+        document.getElementById('noPaymentModal').style.display = 'flex'; // Open the no payment modal
     };
 
+    // Function to close the "Payment Not Completed" modal
     function closeNoPaymentModal() {
-        document.getElementById('noPaymentModal').style.display = 'none'; // Закрыть окно "нет оплаты"
+        document.getElementById('noPaymentModal').style.display = 'none'; // Close the no payment modal
     }
+
+    // Optional: Close modals when clicking outside the modal content
+    window.onclick = function(event) {
+        const modals = document.getElementsByClassName('modal');
+        for (let modal of modals) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    };
 </script>
 
 </body>
