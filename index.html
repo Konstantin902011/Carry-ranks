@@ -40,7 +40,7 @@
         .product-card img {
             width: 100%;
             height: auto;
-            max-width: 150px; /* Максимальный размер изображений */
+            max-width: 150px;
             margin-bottom: 10px;
         }
         .product-card h3 {
@@ -64,193 +64,135 @@
         .button:hover {
             background-color: #218838;
         }
+        .modal {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .modal-buttons {
+            margin-top: 20px;
+        }
+        .modal-buttons .button {
+            margin: 10px;
+        }
+        .social-links img {
+            width: 40px;
+            margin: 0 10px;
+        }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>Carry Shop</h1>
+<div class="container">
+    <h1>Carry Shop</h1>
 
-        <!-- Категория Carry Ranks 30 -->
-        <div class="category">
-            <h2>Carry Ranks 30</h2>
+    <!-- Категория Carry Ranks 30 -->
+    <div class="category">
+        <h2>Carry Ranks 30</h2>
 
-            <div class="product-card">
-                <img src="images/rank30.jpg" alt="Rank 30">
-                <h3>Rank 30 : From 750</h3>
-                <p>Price: 9.99€</p>
-                <a class="button" href="https://paypal.me/amsacc">Buy Now</a>
-            </div>
-
-            <div class="product-card">
-                <img src="images/rank30.jpg" alt="Rank 30">
-                <h3>Rank 30 : From 800</h3>
-                <p>Price: 8.99€</p>
-                <a class="button" href="https://paypal.me/amsacc">Buy Now</a>
-            </div>
-
-            <div class="product-card">
-                <img src="images/rank30.jpg" alt="Rank 30">
-                <h3>Rank 30 : From 850</h3>
-                <p>Price: 7.99€</p>
-                <a class="button" href="https://paypal.me/amsacc">Buy Now</a>
-            </div>
-
-            <div class="product-card">
-                <img src="images/rank30.jpg" alt="Rank 30">
-                <h3>Rank 30 : From 900</h3>
-                <p>Price: 6.99€</p>
-                <a class="button" href="https://paypal.me/amsacc">Buy Now</a>
-            </div>
-
-            <div class="product-card">
-                <img src="images/rank30.jpg" alt="Rank 30">
-                <h3>Rank 30 : From 950</h3>
-                <p>Price: 5.49€</p>
-                <a class="button" href="https://paypal.me/amsacc">Buy Now</a>
-            </div>
+        <div class="product-card">
+            <img src="images/rank30.jpg" alt="Rank 30">
+            <h3>Rank 30 : From 750</h3>
+            <p>Price: 9.99€</p>
+            <a class="button" onclick="showModal('https://paypal.me/amsacc')">Buy Now</a>
         </div>
 
-        <!-- Категория Carry Ranks 35 -->
-        <div class="category">
-            <h2>Carry Ranks 35</h2>
-
-            <div class="product-card">
-                <img src="images/rank35.jpeg" alt="Rank 35">
-                <h3>Rank 35 : From 750</h3>
-                <p>Price: 34.99€</p>
-                <a class="button" href="https://paypal.me/amsacc">Buy Now</a>
-            </div>
-
-            <div class="product-card">
-                <img src="images/rank35.jpeg" alt="Rank 35">
-                <h3>Rank 35 : From 1000</h3>
-                <p>Price: 24.99€</p>
-                <a class="button" href="https://paypal.me/amsacc">Buy Now</a>
-            </div>
-
-            <div class="product-card">
-                <img src="images/rank35.jpeg" alt="Rank 35">
-                <h3>Rank 35 : From 1050</h3>
-                <p>Price: 22.99€</p>
-                <a class="button" href="https://paypal.me/amsacc">Buy Now</a>
-            </div>
-
-            <div class="product-card">
-                <img src="images/rank35.jpeg" alt="Rank 35">
-                <h3>Rank 35 : From 1100</h3>
-                <p>Price: 19.99€</p>
-                <a class="button" href="https://paypal.me/amsacc">Buy Now</a>
-            </div>
-
-            <div class="product-card">
-                <img src="images/rank35.jpeg" alt="Rank 35">
-                <h3>Rank 35 : From 1150</h3>
-                <p>Price: 16.99€</p>
-                <a class="button" href="https://paypal.me/amsacc">Buy Now</a>
-            </div>
-
-            <div class="product-card">
-                <img src="images/rank35.jpeg" alt="Rank 35">
-                <h3>Rank 35 : From 1200</h3>
-                <p>Price: 12.99€</p>
-                <a class="button" href="https://paypal.me/amsacc">Buy Now</a>
-            </div>
+        <div class="product-card">
+            <img src="images/rank30.jpg" alt="Rank 30">
+            <h3>Rank 30 : From 800</h3>
+            <p>Price: 8.99€</p>
+            <a class="button" onclick="showModal('https://paypal.me/amsacc')">Buy Now</a>
         </div>
 
-        <!-- Категория Ranked (Master) -->
-        <div class="category">
-            <h2>Ranked (Master)</h2>
-            <p>No products available in this category yet.</p>
-        </div>
+        <!-- Другие продукты категории Rank 30... -->
 
-        <!-- Категория Общие кубки -->
-        <div class="category">
-            <h2>Общие кубки</h2>
-            <p>No products available in this category yet.</p>
-        </div>
     </div>
 
+    <!-- Категория Carry Ranks 35 -->
+    <div class="category">
+        <h2>Carry Ranks 35</h2>
 
-<!-- Modal окно с правилами -->
+        <div class="product-card">
+            <img src="images/rank35.jpeg" alt="Rank 35">
+            <h3>Rank 35 : From 750</h3>
+            <p>Price: 34.99€</p>
+            <a class="button" onclick="showModal('https://paypal.me/amsacc')">Buy Now</a>
+        </div>
+
+        <!-- Другие продукты категории Rank 35... -->
+
+    </div>
+</div>
+
+<!-- Модальное окно для подтверждения правил покупки -->
 <div id="rulesModal" class="modal">
     <div class="modal-content">
-        <h2>Purchase Rules</h2>
+        <h3>Before You Pay</h3>
         <p>By paying for a purchase you agree to the rules:</p>
-        <ul>
-            <li>The order will be completed within 72 hours (usually 18).</li>
-            <li>No refund.</li>
-            <li>I log into your account and play by myself.</li>
-            <li>❗️Pay the transfer fee.</li>
-            <li>‼️Select button - For Friends and Family.</li>
+        <ul style="text-align: left;">
+            <li>The order will be completed within 72 hours (usually 18)</li>
+            <li>No refund</li>
+            <li>I log into your account and play by myself</li>
+            <li>❗️Pay the transfer fee</li>
+            <li>‼️Select the button - For Friends and Family</li>
         </ul>
-        <button class="agree-btn" id="agreeButton">Agree and Continue</button>
-        <button class="disagree-btn" id="disagreeButton">Disagree</button>
+        <div class="modal-buttons">
+            <a class="button" onclick="proceedPayment()">I Agree</a>
+            <a class="button" style="background-color: #dc3545;" onclick="cancelPayment()">I Don't Agree</a>
+        </div>
     </div>
 </div>
 
-<!-- Модальное окно для уведомления о контакте -->
+<!-- Модальное окно с контактами -->
 <div id="contactModal" class="modal">
     <div class="modal-content">
-        <h2>Thank you for your purchase!</h2>
-        <p>Please contact me via one of the following platforms to finalize the order:</p>
-        <div class="socials">
-            <a href="https://discordapp.com/users/kostantincarry" target="_blank">
-                <img src="discord.png" alt="Discord">
-                <span>Discord</span>
+        <h3>Thank You for Your Purchase!</h3>
+        <p>Contact me via one of these platforms:</p>
+        <div class="social-links">
+            <a href="https://discord.com" target="_blank">
+                <img src="images/discord.png" alt="Discord">@kostantincarry
             </a>
             <a href="https://t.me/peipya" target="_blank">
-                <img src="telegram.png" alt="Telegram">
-                <span>Telegram</span>
+                <img src="images/telegram.png" alt="Telegram">@peipya
             </a>
             <a href="https://wa.me/79265881185" target="_blank">
-                <img src="whatsapp.png" alt="WhatsApp">
-                <span>WhatsApp</span>
+                <img src="images/whatsapp.png" alt="WhatsApp">WhatsApp: 79265881185
             </a>
         </div>
     </div>
 </div>
 
-<!-- Модальное окно, если не оплатил -->
-<div id="noPaymentModal" class="modal">
-    <div class="modal-content">
-        <h2>Payment Not Completed</h2>
-        <p>If you did not complete the payment, please go back and try again.</p>
-        <button onclick="closeNoPaymentModal()">Go Back</button>
-    </div>
-</div>
-
-<footer style="text-align:center; padding:20px;">
-    <p>&copy; 2024 Carry Shop</p>
-</footer>
-
 <script>
-    let selectedPaymentLink = '';
+    let paymentUrl = '';
 
-    // Функция для открытия модального окна с правилами
-    function openModal(paymentLink) {
-        selectedPaymentLink = paymentLink; // Запоминаем ссылку для оплаты
+    function showModal(url) {
+        paymentUrl = url;
         document.getElementById('rulesModal').style.display = 'flex';
     }
 
-    // Обработчик для кнопки "Agree and Continue"
-    document.getElementById('agreeButton').onclick = function() {
-        window.open(selectedPaymentLink, '_blank'); // Открываем PayPal в новой вкладке
-        document.getElementById('rulesModal').style.display = 'none'; // Закрываем модальное окно
-        document.getElementById('contactModal').style.display = 'flex'; // Открываем уведомление с контактами
-    };
+    function proceedPayment() {
+        document.getElementById('rulesModal').style.display = 'none';
+        document.getElementById('contactModal').style.display = 'flex';
+        window.location.href = paymentUrl; // Перенаправление на PayPal
+    }
 
-    // Обработчик для кнопки "Disagree"
-    document.getElementById('disagreeButton').onclick = function() {
-        document.getElementById('rulesModal').style.display = 'none'; // Закрываем модальное окно
-        document.getElementById('noPaymentModal').style.display = 'flex'; // Открываем окно, если не оплатил
-    };
-
-    function closeNoPaymentModal() {
-        document.getElementById('noPaymentModal').style.display = 'none'; // Закрыть окно "нет оплаты"
+    function cancelPayment() {
+        document.getElementById('rulesModal').style.display = 'none';
+        alert('You cancelled the payment. Please try again if you change your mind.');
     }
 </script>
-
 
 </body>
 </html>
