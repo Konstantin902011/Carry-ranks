@@ -171,9 +171,8 @@
         </div>
     </div>
 
-</body>
-</html>
-<!-- Modal for Purchase Rules -->
+
+<!-- Modal окно с правилами -->
 <div id="rulesModal" class="modal">
     <div class="modal-content">
         <h2>Purchase Rules</h2>
@@ -190,29 +189,29 @@
     </div>
 </div>
 
-<!-- Modal for Contact Notification -->
+<!-- Модальное окно для уведомления о контакте -->
 <div id="contactModal" class="modal">
     <div class="modal-content">
         <h2>Thank you for your purchase!</h2>
         <p>Please contact me via one of the following platforms to finalize the order:</p>
         <div class="socials">
             <a href="https://discordapp.com/users/kostantincarry" target="_blank">
-                <img src="images/discord.png" alt="Discord">
+                <img src="discord.png" alt="Discord">
                 <span>Discord</span>
             </a>
             <a href="https://t.me/peipya" target="_blank">
-                <img src="images/telegram.png" alt="Telegram">
+                <img src="telegram.png" alt="Telegram">
                 <span>Telegram</span>
             </a>
             <a href="https://wa.me/79265881185" target="_blank">
-                <img src="images/whatsapp.png" alt="WhatsApp">
+                <img src="whatsapp.png" alt="WhatsApp">
                 <span>WhatsApp</span>
             </a>
         </div>
     </div>
 </div>
 
-<!-- Modal for Payment Not Completed -->
+<!-- Модальное окно, если не оплатил -->
 <div id="noPaymentModal" class="modal">
     <div class="modal-content">
         <h2>Payment Not Completed</h2>
@@ -228,40 +227,30 @@
 <script>
     let selectedPaymentLink = '';
 
-    // Function to open the Purchase Rules modal
+    // Функция для открытия модального окна с правилами
     function openModal(paymentLink) {
-        selectedPaymentLink = paymentLink; // Store the payment link
+        selectedPaymentLink = paymentLink; // Запоминаем ссылку для оплаты
         document.getElementById('rulesModal').style.display = 'flex';
     }
 
-    // Handler for the "Agree and Continue" button
+    // Обработчик для кнопки "Agree and Continue"
     document.getElementById('agreeButton').onclick = function() {
-        window.open(selectedPaymentLink, '_blank'); // Open PayPal in a new tab
-        document.getElementById('rulesModal').style.display = 'none'; // Close the rules modal
-        document.getElementById('contactModal').style.display = 'flex'; // Open the contact notification modal
+        window.open(selectedPaymentLink, '_blank'); // Открываем PayPal в новой вкладке
+        document.getElementById('rulesModal').style.display = 'none'; // Закрываем модальное окно
+        document.getElementById('contactModal').style.display = 'flex'; // Открываем уведомление с контактами
     };
 
-    // Handler for the "Disagree" button
+    // Обработчик для кнопки "Disagree"
     document.getElementById('disagreeButton').onclick = function() {
-        document.getElementById('rulesModal').style.display = 'none'; // Close the rules modal
-        document.getElementById('noPaymentModal').style.display = 'flex'; // Open the no payment modal
+        document.getElementById('rulesModal').style.display = 'none'; // Закрываем модальное окно
+        document.getElementById('noPaymentModal').style.display = 'flex'; // Открываем окно, если не оплатил
     };
 
-    // Function to close the "Payment Not Completed" modal
     function closeNoPaymentModal() {
-        document.getElementById('noPaymentModal').style.display = 'none'; // Close the no payment modal
+        document.getElementById('noPaymentModal').style.display = 'none'; // Закрыть окно "нет оплаты"
     }
-
-    // Optional: Close modals when clicking outside the modal content
-    window.onclick = function(event) {
-        const modals = document.getElementsByClassName('modal');
-        for (let modal of modals) {
-            if (event.target == modal) {
-                modal.style.display = 'none';
-            }
-        }
-    };
 </script>
+
 
 </body>
 </html>
